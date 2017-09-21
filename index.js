@@ -45,6 +45,9 @@ function memoryFlipTile(tile, value) {
       setCardAsFlipped(tile, value);
       if(isThereIsAMatch()) {
         matchCards();
+        if (isGameOver()) {
+          reset();
+        }
       } else {
         cardsDoNotMatch();
       }
@@ -90,13 +93,24 @@ function flipCardBack() {
   var tile_1 = '#' + memory_tile_ids[0];
   var tile_2 = '#' + memory_tile_ids[1];
 
-  $(tile_1).css("background-color", "gray");
-  $(tile_1).html("");
-  $(tile_2).css("background-color", "gray");
-  $(tile_2).html("");
+  $(tile_1).css('background-color', 'gray');
+  $(tile_1).html('');
+  $(tile_2).css('background-color', 'gray');
+  $(tile_2).html('');
 
   memory_values = [];
   memory_tile_ids = [];
+}
+
+// if tiles_flipped is same length of memory_array, the game is over
+function isGameOver() {
+  return tiles_flipped == memory_array.length;
+}
+
+function reset() {
+  alert('Generating new board');
+  $('#memory_board').html('');
+  newBoard();
 }
 
 newBoard();
