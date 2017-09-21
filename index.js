@@ -7,8 +7,10 @@ var board = $('#memory_board');
 // Event handler for clicked card
 board.click(function(event) {
   var tile = event.target;
-  var value = event.target.attributes[2].value;
-  memoryFlipTile(tile, value);
+  if($(tile).hasClass('card')) {
+    var value = event.target.attributes[2].value;
+    memoryFlipTile(tile, value);
+  }
 });
 
 // Sets up board
