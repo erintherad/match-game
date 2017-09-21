@@ -43,6 +43,11 @@ function memoryFlipTile(tile, value) {
       setCardAsFlipped(tile, value);
     } else if (isOneCardFlipped()) {
       setCardAsFlipped(tile, value);
+      if(isThereIsAMatch()) {
+        matchCards();
+      } else {
+        cardsDoNotMatch();
+      }
     }
   }
 }
@@ -60,7 +65,38 @@ function isOneCardFlipped() {
 // saves flipped value in memory_values arr and memory_tile_ids arr
 function setCardAsFlipped(tile, value) {
   memory_values.push(value);
-  memory_tile_ids.push($(tile).id);
+  memory_tile_ids.push($(tile)[0].id);
+}
+
+// checks to see if there is a match based on stored memory_values in arr
+function isThereIsAMatch() {
+  return memory_values[0] == memory_values[1];
+}
+
+// adds a value of 2 to tiles_flipped variable. This count defines when the game is over. function also clears memory_values and memory_tile_ids since they now match
+function matchCards() {
+  tiles_flipped += 2;
+  memory_values = [];
+  memory_tile_ids = [];
+}
+
+// if 2 crads are not the same, flip them back
+function cardsDoNotMatch() {
+  setTimeout(flipCardBack, 700);
+}
+
+// functionality that flips card back
+function flipCardBack() {
+  var tile_1 = '#' + memory_tile_ids[0];
+  var tile_2 = '#' + memory_tile_ids[1];
+
+  $(tile_1).css("background-color", "gray");
+  $(tile_1).html("");
+  $(tile_2).css("background-color", "gray");
+  $(tile_2).html("");
+
+  memory_values = [];
+  memory_tile_ids = [];
 }
 
 newBoard();
