@@ -4,6 +4,10 @@ var memory_tile_ids = [];
 var tiles_flipped = 0;
 var board = $('#memory_board');
 
+function memoryFlipTile(tile, value) {
+    console.log('clicked with: ' + value);
+}
+
 // Sets up board
 function newBoard() {
  tiles_flipped = 0;
@@ -12,7 +16,7 @@ function newBoard() {
  var output = '';
 
  _.forEach(memory_array, function(memory_array_value, index) {
-   output += '<div id="tile_'+ index +'">test</div>';
+   output += '<div id="tile_'+ index +'" onclick="memoryFlipTile(this,\''+ memory_array_value +'\')">test</div>';
  });
  board.append(output);
 }
