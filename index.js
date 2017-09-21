@@ -4,6 +4,7 @@ var memory_tile_ids = [];
 var tiles_flipped = 0;
 var board = $('#memory_board');
 
+// Event handler for clicked card
 board.click(function(event) {
   var tile = event.target;
   var value = event.target.attributes[2].value;
