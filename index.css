@@ -1,17 +1,15 @@
 #memory_board {
-  width: 50%;
+  width: 49%;
+  padding-top: 50px;
   margin: 0 auto;
 }
 
 .card {
-  background-color: gray;
   padding: 60px;
   margin: 0 auto;
-  border: black 1px solid;
 }
 
-.flipped {
-  background-color: white;
-  width: 100px;
-  height: 100px;
+.covered {
+  background-image: url('./assets/box.png');
+  background-size: contain;
 }

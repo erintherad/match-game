@@ -27,7 +27,7 @@ $(document).ready(function() {
     var output = '';
 
   _.forEach(memory_array, function(memory_array_value, index) {
-    output += '<div class="card covered col-md-2" id="tile_'+ index +'" data-value="\''+ memory_array_value +'\'"></div>';
+    output += '<div class="card covered col-md-2" id="tile_'+ index +'" data-value="'+ memory_array_value +'"></div>';
   });
     board.append(output);
   }
@@ -54,8 +54,7 @@ $(document).ready(function() {
 
   // flips card and changes css
   function flipCard(tile, value) {
-   $(tile).removeClass('covered').addClass('flipped');
-   $(tile).html(value);
+   $(tile).css('background-image', 'url("./assets/' + value + '.jpg")');
   }
 
   // checks if you can flip a card
@@ -101,10 +100,8 @@ $(document).ready(function() {
     var tile_1 = '#' + memory_tile_ids[0];
     var tile_2 = '#' + memory_tile_ids[1];
 
-    $(tile_1).removeClass('flipped').addClass('covered');
-    $(tile_1).html('');
-    $(tile_2).removeClass('flipped').addClass('covered');
-    $(tile_2).html('');
+    $(tile_1).css('background-image', 'url(./assets/box.png)');
+    $(tile_2).css('background-image', 'url(./assets/box.png)');
 
     memory_values = [];
     memory_tile_ids = [];
