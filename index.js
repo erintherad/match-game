@@ -4,22 +4,39 @@ var memory_tile_ids = [];
 var tiles_flipped = 0;
 var board = $('#memory_board');
 
-function memoryFlipTile(tile, value) {
-    console.log('clicked with: ' + value);
-}
+board.click(function(event) {
+  var tile = event.target;
+  var value = event.target.attributes[2].value;
+  memoryFlipTile(tile, value);
+});
 
 // Sets up board
 function newBoard() {
- tiles_flipped = 0;
- memory_array = _.shuffle(memory_array);
+  tiles_flipped = 0;
+  memory_array = _.shuffle(memory_array);
 
- var output = '';
+  var output = '';
 
- _.forEach(memory_array, function(memory_array_value, index) {
-   output += '<div id="tile_'+ index +'" onclick="memoryFlipTile(this,\''+ memory_array_value +'\')">test</div>';
- });
- board.append(output);
+_.forEach(memory_array, function(memory_array_value, index) {
+  output += '<div class="card" id="tile_'+ index +'" data-value="\''+ memory_array_value +'\'"></div>';
+});
+  board.append(output);
 }
 
-// calls board
+function flipCard(tile, value) {
+ $(tile).css("background-color", "white");
+ $(tile).html(value);
+}
+
+function canFlipCard(tile) {
+  return $(tile).html("") && memory_values.length < 2;
+}
+
+// Provides logic for flipped card when clicked
+function memoryFlipTile(tile, value) {
+  if (canFlipCard(tile)) {
+    flipCard(tile, value);
+  }
+}
+
 newBoard();
