@@ -43,6 +43,8 @@ $(document).ready(function() {
         if(isThereIsAMatch()) {
           matchCards();
           if (isGameOver()) {
+            flipCard(tile, value);
+            alert('Nice job! All pieces are matched. Try again?');
             reset();
           }
         } else {
@@ -113,7 +115,6 @@ $(document).ready(function() {
   }
 
   function reset() {
-    alert('Generating new board');
     $('#memory_board').html('');
     newBoard();
   }
