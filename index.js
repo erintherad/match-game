@@ -26,20 +26,9 @@ function newBoard() {
   var output = '';
 
 _.forEach(memory_array, function(memory_array_value, index) {
-  output += '<div class="card" id="tile_'+ index +'" data-value="\''+ memory_array_value +'\'"></div>';
+  output += '<div><div class="card col-md-2" id="tile_'+ index +'" data-value="\''+ memory_array_value +'\'"></div>';
 });
   board.append(output);
-}
-
-// flips card and changes css
-function flipCard(tile, value) {
- $(tile).css('background-color', 'white');
- $(tile).html(value);
-}
-
-// checks if you can flip a card
-function canFlipCard(tile) {
-  return $(tile).html('') && memory_values.length < 2;
 }
 
 // Provides logic for flipped card when clicked
@@ -60,6 +49,17 @@ function memoryFlipTile(tile, value) {
       }
     }
   }
+}
+
+// flips card and changes css
+function flipCard(tile, value) {
+ $(tile).addClass('flipped');
+ $(tile).html(value);
+}
+
+// checks if you can flip a card
+function canFlipCard(tile) {
+  return $(tile).html('') && memory_values.length < 2;
 }
 
 // check for no cards flipped
