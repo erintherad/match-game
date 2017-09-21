@@ -26,13 +26,13 @@ _.forEach(memory_array, function(memory_array_value, index) {
 
 // flips card and changes css
 function flipCard(tile, value) {
- $(tile).css("background-color", "white");
+ $(tile).css('background-color', 'white');
  $(tile).html(value);
 }
 
 // checks if you can flip a card
 function canFlipCard(tile) {
-  return $(tile).html("") && memory_values.length < 2;
+  return $(tile).html('') && memory_values.length < 2;
 }
 
 // Provides logic for flipped card when clicked
