@@ -4,9 +4,13 @@ $(document).ready(function() {
   var memory_tile_ids = [];
   var tiles_flipped = 0;
   var board = $('#memory_board');
+  var count = 1;
 
   // Event handler for clicked card
   board.click(function(event) {
+
+    $('#counter').html(count)
+    count++
     var tile = event.target;
     if($(tile).hasClass('card')) {
       var value = event.target.attributes[2].value;
@@ -44,7 +48,7 @@ $(document).ready(function() {
           matchCards();
           if (isGameOver()) {
             flipCard(tile, value);
-            alert('Nice job! All pieces are matched. Try again?');
+            alert('Nice job! It took you ' + count + ' times. Try again to beat your last score?');
             reset();
           }
         } else {
@@ -117,6 +121,7 @@ $(document).ready(function() {
   function reset() {
     $('#memory_board').html('');
     newBoard();
+    count = 0;
   }
 
   newBoard();
