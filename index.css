@@ -1,5 +1,5 @@
 #memory_board {
-  width: 49%;
+  width: 1000px;
   padding-top: 50px;
   margin: 0 auto;
 }
@@ -7,9 +7,11 @@
 .card {
   padding: 60px;
   margin: 0 auto;
+  width: 200px;
+  height: 200px;
 }
 
 .covered {
   background-image: url('./assets/box.png');
-  background-size: contain;
+  background-size: cover;
 }
