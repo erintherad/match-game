@@ -13,6 +13,11 @@ board.click(function(event) {
   }
 });
 
+// Event handler for reset button
+$('#reset').click(function(event) {
+  reset();
+})
+
 // Sets up board
 function newBoard() {
   tiles_flipped = 0;
