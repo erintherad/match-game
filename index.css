@@ -1,15 +1,17 @@
 #memory_board {
- background:gray;
- border:black 1px solid;
- width: 800px;
- height: 540px;
- padding: 24px;
- margin: 0px auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .card {
-  display: inline-flex;
-  padding: 50px;
-  margin: 4px;
+  background-color: gray;
+  padding: 60px;
+  margin: 0 auto;
   border: black 1px solid;
+}
+
+.flipped {
+  background-color: white;
+  width: 100px;
+  height: 100px;
 }
