@@ -24,11 +24,13 @@ _.forEach(memory_array, function(memory_array_value, index) {
   board.append(output);
 }
 
+// flips card and changes css
 function flipCard(tile, value) {
  $(tile).css("background-color", "white");
  $(tile).html(value);
 }
 
+// checks if you can flip a card
 function canFlipCard(tile) {
   return $(tile).html("") && memory_values.length < 2;
 }
