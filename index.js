@@ -39,7 +39,28 @@ function canFlipCard(tile) {
 function memoryFlipTile(tile, value) {
   if (canFlipCard(tile)) {
     flipCard(tile, value);
+    if (areNoCardsFlipped()) {
+      setCardAsFlipped(tile, value);
+    } else if (isOneCardFlipped()) {
+      setCardAsFlipped(tile, value);
+    }
   }
+}
+
+// check for no cards flipped
+function areNoCardsFlipped() {
+  return memory_values.length == 0;
+}
+
+// check for one card flipped
+function isOneCardFlipped() {
+  return memory_values.length == 1
+}
+
+// saves flipped value in memory_values arr and memory_tile_ids arr
+function setCardAsFlipped(tile, value) {
+  memory_values.push(value);
+  memory_tile_ids.push($(tile).id);
 }
 
 newBoard();
