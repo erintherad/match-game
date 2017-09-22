@@ -1,3 +1,17 @@
+body {
+  font-family: 'lora', serif;
+  color: #cc9c6c;
+}
+
+.btn-blue {
+  background-color: #44557C;
+  border: none;
+}
+
+.btn:hover {
+  color: white;
+}
+
 #memory_board {
   width: 1000px;
   padding-top: 50px;
@@ -9,6 +23,11 @@
   margin: 0 auto;
   width: 200px;
   height: 200px;
+}
+
+.card:hover {
+  background-image: url('./assets/box_shadow.png');
+  background-size: cover;
 }
 
 .covered {
