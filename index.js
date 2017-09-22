@@ -4,13 +4,12 @@ $(document).ready(function() {
   var memory_tile_ids = [];
   var tiles_flipped = 0;
   var board = $('#memory_board');
-  var count = 1;
+  var count = 0;
 
   // Event handler for clicked card
   board.click(function(event) {
-
-    $('#counter').html(count)
     count++
+    $('#counter').html(count)
     var tile = event.target;
     if($(tile).hasClass('card')) {
       var value = event.target.attributes[2].value;
@@ -122,6 +121,7 @@ $(document).ready(function() {
     $('#memory_board').html('');
     newBoard();
     count = 0;
+    $('#counter').html(count)
   }
 
   newBoard();
