@@ -4,20 +4,23 @@
     <meta charset="utf-8">
     <title>Memory</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css"></link>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2>Memory</h2>
-          <p>Click on each box to match the jewelry</p>
-          <button type="button" id="reset">Reset</button>
-          <h4>Count: <span id="counter"></span></h4>
+          <h1>Memory</h1>
+          <p>Click on a box to make a match</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <div class="game-stats">
+            <h4 class="pull-left">Count: <span id="counter"></span></h4>
+            <button class="btn btn-blue pull-right" type="button" id="reset">Reset</button>
+          </div>
           <div class="row" id="memory_board"></div>
         </div>
       </div>

@@ -12,6 +12,12 @@ body {
   color: white;
 }
 
+.game-stats {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
 #memory_board {
   width: 1000px;
   padding-top: 50px;
