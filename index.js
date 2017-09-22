@@ -60,7 +60,7 @@ $(document).ready(function() {
 
   // flips card and changes css
   function flipCard(tile, value) {
-   $(tile).css('background-image', 'url("./assets/' + value + '.jpg")');
+    $(tile).css('background-image', 'url("./assets/' + value + '.jpg")');
   }
 
   // checks if you can flip a card
